@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- vendor and product ID for Dream Cheeky USB Missle Launcher -->
+    <usb-device
+        product-id="1793"
+        vendor-id="2689"/>
+    <!-- vendor and product ID for Dream Cheeky Wireless USB Missle Launcher -->
+    <usb-device
+        product-id="65281"
+        vendor-id="2689"/>
+</resources>
