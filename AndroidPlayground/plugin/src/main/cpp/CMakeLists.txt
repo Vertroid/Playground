@@ -4,7 +4,7 @@
 
 # Sets the minimum version of CMake required to build the native library.
 
-cmake_minimum_required(VERSION 3.18.1)
+cmake_minimum_required(VERSION 3.4.1)
 
 # Declares and names the project.
 
@@ -15,10 +15,18 @@ project("plugin")
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
+IF(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Windows")
+    ADD_DEFINITIONS(-DWindows)
+ELSE(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
+    ADD_DEFINITIONS(-DLinux)
+ENDIF()
 
+include_directories(
+        ${CMAKE_SOURCE_DIR}/include
+)
 
 file(GLOB src-files
-        ${CMAKE_SOURCE_DIR}/*.cpp)
+        ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
 add_library( # Sets the name of the library.
              nativeplugin
