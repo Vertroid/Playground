@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestAndroidGLES.unity
     guid: 6c7c0f2fa577cda48a97e77739f83dae
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/TestVideoMatting1.unity
+    guid: 785b01d019dde84489037184476c5142
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b3c7226a6298edc44aeb3f4c487c332f, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9d3040706715aac4e8151bb96fc6f73d, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 935e7f28ce057a7458d5d9584559106d, type: 2}
