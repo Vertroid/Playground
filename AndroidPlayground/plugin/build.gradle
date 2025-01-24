@@ -27,7 +27,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildToolsVersion '32.0.0'
     externalNativeBuild {
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
