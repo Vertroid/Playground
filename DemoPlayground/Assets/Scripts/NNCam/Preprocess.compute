@@ -5,6 +5,18 @@ sampler2D _Texture;
 RWBuffer<float> _Tensor;
 uint _Width, _Height;
 
+float3 LinearToGammaSpace (float3 linRGB)
+{
+    linRGB = max(linRGB, float3(0.h, 0.h, 0.h));
+    return max(1.055h * pow(linRGB, 0.416666667h) - 0.055h, 0.h);
+}
+
+float3 GammaToLinearSpace (float3 sRGB)
+{
+        // Approximate version from http://chilliant.blogspot.com.au/2012/08/srgb-approximations-for-hlsl.html?m=1
+        return sRGB * (sRGB * (sRGB * 0.305306011h + 0.682171111h) + 0.012522878h);
+}
+
 float3 SampleInput(uint3 id)
 {
     float2 uv = (id.xy + 0.5) / float2(_Width, _Height);
@@ -38,3 +50,5 @@ void PreprocessResNet50(uint3 id : SV_DispatchThreadID)
     const float3 kImageNetMean = float3(-123.15, -115.90, -103.06);
     OutputElement(id, SampleInput(id) * 255 + kImageNetMean);
 }
+
+

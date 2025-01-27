@@ -2,14 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: QuadMaterial
   m_Shader: {fileID: 4800000, guid: bdf1c4706e9dbf34fa42c24b3d198d0c, type: 3}
-  m_ShaderKeywords: ALPHAPACK_NONE FORCEEYE_NONE LAYOUT_NONE STEREO_NONE
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ALPHAPACK_NONE
+  - FORCEEYE_NONE
+  - LAYOUT_NONE
+  - STEREO_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: bb83b41b53a59874692b83eab5873998, type: 3}
+        m_Texture: {fileID: 8400000, guid: 45484ba0453ba064fb2ac658ec85fef8, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -59,6 +64,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - AlphaPack: 0
     - ForceEye: 0

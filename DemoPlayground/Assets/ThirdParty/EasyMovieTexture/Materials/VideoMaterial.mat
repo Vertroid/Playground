@@ -2,48 +2,48 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: VideoMaterial
-  m_Shader: {fileID: 4800000, guid: 112588b5c6fb3064db607d0abe9bb5e4, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: bdf1c4706e9dbf34fa42c24b3d198d0c, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - STEREO_NONE
   m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 2800000, guid: 3dd07e17f2d1d274aa6f0dc746d84e46, type: 3}
+    - _ChromaTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
-    - first:
-        name: _Alpha
-      second: 1
-    - first:
-        name: _Cutoff
-      second: 0.5
-    - first:
-        name: _LightParam
-      second: 0
-    - first:
-        name: _slope
-      second: 0.2
-    - first:
-        name: _thresh
-      second: 0.8
+    - Stereo: 0
+    - _Alpha: 1
+    - _ApplyGamma: 0
+    - _Brightness: 0
+    - _Cutoff: 0.5
+    - _FlipX: 0
+    - _LightParam: 0
+    - _StereoDebug: 0
+    - _UseYpCbCr: 0
+    - _slope: 0.2
+    - _thresh: 0.8
     m_Colors:
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _Tint
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _keyingColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _keyingColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
