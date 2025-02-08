@@ -36,8 +36,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.6.0'
-    implementation 'androidx.activity:activity:1.2.4'
+    implementation 'androidx.annotation:annotation:1.9.1'
+    implementation 'androidx.activity:activity:1.7.0'
     implementation 'org.videolan.android:libvlc-all:3.6.0-eap6'
     implementation files('libs\\unity3d.jar')
 }
