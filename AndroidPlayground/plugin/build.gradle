@@ -1,8 +1,11 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
 
 android {
-    compileSdk 32
-
+    namespace "com.vertex.plugin"
+    compileSdk 35
     defaultConfig {
         minSdk 23
         targetSdk 32
@@ -10,6 +13,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+
         externalNativeBuild {
             cmake {
                 cppFlags ''
@@ -24,8 +31,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     externalNativeBuild {
         cmake {
@@ -33,11 +40,14 @@ android {
             version '3.18.1'
         }
     }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.9.1'
-    implementation 'androidx.activity:activity:1.7.0'
-    implementation 'org.videolan.android:libvlc-all:3.6.0-eap6'
     implementation files('libs\\unity3d.jar')
+    api 'androidx.activity:activity:1.7.0'
+    api 'org.videolan.android:libvlc-all:3.6.0-eap6'
+    api 'androidx.core:core-ktx:1.15.0'
 }
