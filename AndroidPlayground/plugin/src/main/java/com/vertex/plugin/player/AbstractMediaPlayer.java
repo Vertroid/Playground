@@ -77,7 +77,7 @@ public abstract class AbstractMediaPlayer implements IMediaPlayer {
                     sarNum, sarDen);
     }
 
-    protected final boolean notifyOnError(int what, int extra) {
+    public final boolean notifyOnError(int what, int extra) {
         return mOnErrorListener != null && mOnErrorListener.onError(this, what, extra);
     }
 

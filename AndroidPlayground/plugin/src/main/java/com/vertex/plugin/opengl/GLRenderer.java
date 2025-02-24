@@ -13,13 +13,11 @@ import android.view.Surface;
 import com.vertex.plugin.player.IMediaPlayer;
 import com.vertex.plugin.utils.GLESUtils;
 
-import org.videolan.VLCMediaPlayer;
+import com.vertex.plugin.player.vlc.VLCMediaPlayer;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
