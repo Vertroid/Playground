@@ -15,12 +15,14 @@ JNIEXPORT void JNICALL
 Java_com_vertex_plugin_utils_FFmpegUtils_checkProtocol(JNIEnv *env, jclass clazz) {
     LOGE("Calling checkProtocol");
 
+    LOGE("libavcodec version: %u\n", avcodec_version());
+
     avformat_network_init();
 
     void *opaque = NULL;
     const char* protocol = NULL;
     while ((protocol = avio_enum_protocols(&opaque, 0))) {
-        LOGE("%s\n", protocol)
+        LOGE("Protocol %s\n", protocol)
     }
 
     avformat_network_deinit();
