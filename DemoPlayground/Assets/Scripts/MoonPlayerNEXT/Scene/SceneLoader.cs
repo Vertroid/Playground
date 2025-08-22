@@ -78,9 +78,19 @@ namespace MoonXR.Player.Scene
                 }
             }
             catch (Exception e)
-            { 
-                
+            {
+
             }
+        }
+
+        private bool ShouldPreload(SceneSky type)
+        {
+            return true;
+        }
+
+        private bool ShouldDestroyOnUnload(SceneSky type)
+        {
+            return true;
         }
     }
 }

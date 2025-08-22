@@ -1,41 +1,51 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.XR.Interaction;
 
-[System.Serializable]
-public class SceneMapping
+namespace MoonXR.Player.Scene
 {
-    public SceneSky sceneType;
-    public string addressableId;
-    public string displayName;
-    public Sprite previewIcon;
-}
-
-[CreateAssetMenu(fileName = "SceneConfig", menuName = "MoonXR/Scene Config")]
-public class SceneConfigAsset : ScriptableObject
-{
-    [SerializeField] private SceneMapping[] sceneMappings;
-    
-    private Dictionary<SceneSky, string> _sceneDict;
-    
-    public Dictionary<SceneSky, string> GetSceneMapping()
+    [CreateAssetMenu(fileName = "SceneConfig", menuName = "MoonXR/Scene Configuration")]
+    public class SceneConfiguration : ScriptableObject
     {
-        if (_sceneDict == null)
+        [System.Serializable]
+        public class SceneMapping
         {
-            _sceneDict = new Dictionary<SceneSky, string>();
-            foreach (var mapping in sceneMappings)
-            {
-                _sceneDict[mapping.sceneType] = mapping.addressableId;
-            }
+            public SceneSky SceneType;
+            public string ResourcePath; // Addressable ID or
+            public string displayName;
+            public bool IsSkyboxScene;
         }
-        return _sceneDict;
-    }
-    
-    public string GetAddressableId(SceneSky sceneType)
-    {
-        return GetSceneMapping().TryGetValue(sceneType, out string id) ? id : null;
-    }
-    
-    public bool IsValidScene(SceneSky sceneType)
-    {
-        return GetSceneMapping().ContainsKey(sceneType);
+        [SerializeField] private SceneMapping[] sceneMappings;
+        private Dictionary<SceneSky, string> _sceneDict;
+
+        public Dictionary<SceneSky, string> GetSceneMapping()
+        {
+            if (_sceneDict == null)
+            {
+                _sceneDict = new Dictionary<SceneSky, string>();
+                foreach (var mapping in sceneMappings)
+                {
+                    _sceneDict[mapping.SceneType] = mapping.ResourcePath;
+                }
+            }
+            return _sceneDict;
+        }
+
+        public string GetResourcePath(SceneSky sceneType)
+        {
+            return GetSceneMapping().TryGetValue(sceneType, out string id) ? id : null;
+        }
+
+        public bool IsValidScene(SceneSky sceneType)
+        {
+            return GetSceneMapping().ContainsKey(sceneType);
+        }
+
+        public bool IsSkyboxScene(SceneSky scene)
+        {
+            var mapping = Array.Find(sceneMappings, m => m.SceneType == scene);
+            return mapping?.IsSkyboxScene ?? false;
+        }
     }
 }

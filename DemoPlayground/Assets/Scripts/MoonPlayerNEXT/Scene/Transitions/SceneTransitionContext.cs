@@ -13,7 +13,7 @@ namespace MoonXR.Player.Scene.Transitions
         public SceneSky To { get; set; }
         public IScene Current { get; set; }
         public bool NeedFade { get; set; }
-        public ISceneStateManager StateManager { get; set; }
+        public ISceneStateHandler StateManager { get; set; }
         public ISceneLoader Loader { get; set; }
     }
 }

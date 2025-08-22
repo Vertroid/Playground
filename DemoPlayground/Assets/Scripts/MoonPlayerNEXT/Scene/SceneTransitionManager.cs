@@ -6,10 +6,10 @@ using MoonXR.Player.Scene.Transitions;
 
 namespace MoonXR.Player.Scene
 {
-    public class SceneTransitionManager : ISceneTransitionManager
+    public class SceneTransitionManager : ISceneTransitionHandler
     {
         private readonly ISceneLoader _sceneLoader;
-        private readonly ISceneStateManager _stateManager;
+        private readonly ISceneStateHandler _stateManager;
 
         private readonly TransitionStrategyFactory _strategyFactory;
 
